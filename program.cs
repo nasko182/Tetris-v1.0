@@ -83,18 +83,18 @@ namespace _01._Basic_Stack_Operations
 
         static void Main(string[] args)
         {
-            if (File.Exists("score.txt"))
-            {
-                var allScores = File.ReadAllLines("score.txt");
-                foreach (var score in allScores)
-                {
-                    var match = Regex.Match(score, @"= (?<score>[0-9]+)");
-                    if (match.Success)
-                    {
-                        HightScore = Math.Max(HightScore, int.Parse(match.Groups[1].Value));
-                    }
-                }
-            }
+            //if (File.Exists("score.txt"))
+            //{
+            //    var allScores = File.ReadAllLines("score.txt");
+            //    foreach (var score in allScores)
+            //    {
+            //        var match = Regex.Match(score, @"= (?<score>[0-9]+)");
+            //        if (match.Success)
+            //        {
+            //            HightScore = Math.Max(HightScore, int.Parse(match.Groups[1].Value));
+            //        }
+            //    }
+            //}
             {
                 Console.Title = "Tetris v1.0";
                 Console.WindowHeight = ConsoleRows;
@@ -202,7 +202,6 @@ namespace _01._Basic_Stack_Operations
                         {
                         $"[{DateTime.Now.ToString()}] {Environment.UserName}= {score}"
                         });
-                        // Console.Clear();
                         // TODO: NewHightScore
                         string scoreAsStirng = score.ToString();
                         scoreAsStirng += new string(' ', 6 - scoreAsStirng.Length);
@@ -277,6 +276,7 @@ namespace _01._Basic_Stack_Operations
             {
                 return 2;
             }
+            
             return lines;
         }
 
